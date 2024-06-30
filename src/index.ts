@@ -1,10 +1,10 @@
 import express from "express";
-
+// import all our route which will be handle by express
+import { AdminRoute, VendorRoute } from "./routes";
 const app = express();
 
-app.use("/", (req, res) => {
-  return res.json("Hello World!");
-});
+app.use("/admin", AdminRoute);
+app.use("/vendor", VendorRoute);
 
 app.listen(8000, () => {
   console.clear();
